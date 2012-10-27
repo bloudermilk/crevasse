@@ -1,5 +1,5 @@
 /*
-  Crevasse 0.4.3
+  Crevasse 0.4.5
   Built by Nick Giancola: https://github.com/patbenatar
   Details and source: https://github.com/patbenatar/crevasse
   Demo: https://patbenatar.github.com/crevasse
@@ -289,6 +289,9 @@
         caretPosition = null;
       }
       this.$previewer.html(this._parse(text));
+      if (typeof Rainbow !== "undefined" && Rainbow !== null) {
+        this.$previewer.find("code").addClass("rainbow");
+      }
       if (caretPosition != null) {
         offset = this._determineOffset(text.substr(0, caretPosition));
         if (offset < 0) {
